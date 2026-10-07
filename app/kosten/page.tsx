@@ -3,12 +3,11 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { leistungen, selbstzahlerKasse, type Posten } from "@/content/leistungen";
 import { BuchenButton, Container, Eyebrow, Platzhalter, TelefonButton } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { seo } from "@/content/seo";
+import { brotkrumenJsonLd, seitenMetadaten } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kosten",
-  description:
-    "Kosten nach GOÄ: neurologische Untersuchung als Selbstzahler (Erstgespräch, Gedächtnistestung, Nervenmessung, EEG, Ultraschall) sowie Selbstzahlerleistungen wie Ketamintherapie, Botulinumtoxin-Therapie und Infusionen.",
-};
+export const metadata: Metadata = seitenMetadaten(seo.kosten, "/kosten");
 
 /** Preistabelle für eine Gruppe von Posten. */
 function Preistabelle({ titel, posten }: { titel: string; posten: Posten[] }) {
@@ -45,6 +44,7 @@ function Kasten({ id, titel, children }: { id?: string; titel: string; children:
 export default function KostenSeite() {
   return (
     <>
+      <JsonLd daten={brotkrumenJsonLd("Kosten", "/kosten")} />
       <section className="pt-12 pb-8 md:pt-16 md:pb-10">
         <Container className="max-w-[880px] md:px-0">
           <nav aria-label="Brotkrumen" className="text-sm text-muted">

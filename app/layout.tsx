@@ -4,8 +4,11 @@ import { IBM_Plex_Sans, Newsreader } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobilBuchungsleiste } from "@/components/MobilBuchungsleiste";
+import { JsonLd } from "@/components/JsonLd";
 import { praxis, sprechzeitenStrukturiert } from "@/content/praxis";
 import { behandlungsgebiete, untersuchungen } from "@/content/neurologie";
+import { istVorschau, openGraphBasis, praxisJsonLd, twitterBasis } from "@/lib/seo";
+import { startseiteBeschreibung, startseiteTitel } from "@/content/seo";
 import "./globals.css";
 
 /*
@@ -30,46 +33,14 @@ const plexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(praxis.domain),
   title: {
-    default: `${praxis.kurzname} | ${praxis.arzt}, Neurologe in Berlin`,
+    default: startseiteTitel,
     template: `%s | ${praxis.kurzname}`,
   },
-  description:
-    "Neurologische Praxis in Berlin-Tempelhof. Dr. med. Johannes Brandl, Facharzt für Neurologie. Gesetzlich und privat Versicherte sowie Selbstzahlende. Termine online über Doctolib.",
-  openGraph: {
-    type: "website",
-    locale: "de_DE",
-    siteName: praxis.name,
-  },
-  robots: { index: true, follow: true },
+  description: startseiteBeschreibung,
+  openGraph: openGraphBasis,
+  twitter: twitterBasis,
+  robots: istVorschau ? { index: false, follow: false } : { index: true, follow: true },
 };
-
-/** Strukturierte Daten für die lokale Suche. */
-function arztpraxisJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Physician",
-    name: praxis.name,
-    url: praxis.domain,
-    medicalSpecialty: "Neurologic",
-    ...(praxis.telefon ? { telephone: praxis.telefon } : {}),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: praxis.strasse,
-      postalCode: praxis.plz,
-      addressLocality: praxis.ort,
-      addressCountry: "DE",
-    },
-    employee: { "@type": "Person", name: praxis.arzt, jobTitle: praxis.fachrichtung },
-    image: `${praxis.domain}${praxis.foto.src}`,
-    openingHoursSpecification: sprechzeitenStrukturiert.map((z) => ({
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: z.tage,
-      opens: z.von,
-      closes: z.bis,
-    })),
-    availableService: [...behandlungsgebiete, ...untersuchungen].map((k) => ({ "@type": "MedicalProcedure", name: k.titel })),
-  };
-}
 
 const farbvarianteSkript = `(function(){try{var p=new URLSearchParams(location.search).get("farbe");if(p==="braun"||p==="petrol"){sessionStorage.setItem("farbe",p)}if(sessionStorage.getItem("farbe")==="braun"){document.documentElement.setAttribute("data-farbe","braun")}}catch(e){}})();`;
 
@@ -82,9 +53,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: farbvarianteSkript }} />
       </head>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(arztpraxisJsonLd()) }}
+        <JsonLd
+          daten={praxisJsonLd({
+            schwerpunkte: behandlungsgebiete.map((k) => k.titel),
+            untersuchungen: untersuchungen.map((k) => k.titel),
+            sprechzeiten: sprechzeitenStrukturiert,
+          })}
         />
         <a
           href="#inhalt"

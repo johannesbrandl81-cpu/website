@@ -15,6 +15,7 @@ export function Header() {
             alt=""
             width={276}
             height={362}
+            sizes="40px"
             priority
             className="logo-kopf h-10 w-auto shrink-0 md:h-12"
           />

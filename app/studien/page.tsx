@@ -4,12 +4,11 @@ import Link from "next/link";
 import { PfeilIcon } from "@/components/Icons";
 import { partner, studien, studienStand, type Studie } from "@/content/studien";
 import { BuchenButton, Container, Eyebrow, KiEtikett, Punktliste } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { seo } from "@/content/seo";
+import { brotkrumenJsonLd, seitenMetadaten } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Klinische Studien",
-  description:
-    "Klinische Studien in Berlin in Zusammenarbeit mit FutureMeds: Depressionen, Polyneuropathie, Insomnie, Narkolepsie. Informationen zur Teilnahme.",
-};
+export const metadata: Metadata = seitenMetadaten(seo.studien, "/studien");
 
 function Eckdaten({ studie }: { studie: Studie }) {
   const zeilen = [
@@ -34,6 +33,7 @@ function Eckdaten({ studie }: { studie: Studie }) {
 export default function StudienSeite() {
   return (
     <>
+      <JsonLd daten={brotkrumenJsonLd("Studien", "/studien")} />
       <section className="pt-12 pb-10 md:pt-16 md:pb-14">
         <Container className="max-w-[880px] md:px-0">
           <nav aria-label="Brotkrumen" className="text-sm text-muted">
