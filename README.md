@@ -83,7 +83,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [ ] Nerven- und Muskelsonografie: anbieten? Dann in `content/neurologie.ts` ergänzen
 - [ ] Studien: alle Angaben vor dem Livegang mit futuremeds.de abgleichen (`content/studien.ts`, `studienStand`)
 - [ ] Studien: klären, ob die Praxis für die Vermittlung vergütet wird (dann rechtlich prüfen lassen)
-- [ ] Logo als Originaldatei (SVG oder PNG ab 1000 px). `public/logo-kopf.png`, `app/icon.png` und `app/apple-icon.png` sind aus einem kleinen Bild freigestellt
+- [ ] Logo als Originaldatei (SVG oder PNG ab 1000 px). `public/logo-kopf.png`, `app/icon.png` und `app/apple-icon.png` sind aus einem kleinen Bild freigestellt. Danach die Petrol-Version für den Header mit `scripts/logo-einfaerben.mjs` neu erzeugen
 - [ ] Farbvariante entscheiden: Vorschau mit `?farbe=braun`, zurück mit `?farbe=petrol`. Danach Skript in `app/layout.tsx` und Block `html[data-farbe="braun"]` in `app/globals.css` entfernen oder die Werte als Standard übernehmen
 - [x] Studien: Bild für Narkolepsie ergänzen (mit `scripts/ki-bild.mjs` aufbereiten, in `content/studien.ts` als `bild` eintragen)
 - [ ] Logo Arbeitskreis Botulinumtoxin (in `public/logos/` ablegen und in `content/ueber-mich.ts` eintragen)
@@ -99,6 +99,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
   geladen und von der eigenen Domain ausgeliefert. Beim Seitenaufruf entsteht keine Verbindung zu Google.
 - **Keine Cookies, kein Tracking.** Doctolib ist nur verlinkt. Die Google-Maps-Karte im Kontaktbereich lädt erst nach Klick auf "Karte laden" (`components/KarteMitZustimmung.tsx`); vorher fließen keine Daten an Google. Die Zustimmung wird nicht gespeichert.
 - **KI-generierte Bilder** (Startseite und Studienseite) werden doppelt gekennzeichnet (EU AI Act, Art. 50): sichtbar mit dem Etikett "KI-generiert" und maschinenlesbar in den XMP-Metadaten (IPTC DigitalSourceType `trainedAlgorithmicMedia`). Neue Bilder immer mit `node scripts/ki-bild.mjs <eingabe> <ausgabe.jpg> "<Beschreibung>" [Breite]` aufbereiten, sichtbar mit `<KiEtikett />` (`components/ui.tsx`) kennzeichnen und mit `unoptimized` einbinden, sonst entfernt die Bildoptimierung die Metadaten.
+- **Logo im Header** in Petrol (Farbe der Buttons): `public/logo-kopf-petrol.png`, erzeugt aus dem grünen `public/logo-kopf.png` mit `node scripts/logo-einfaerben.mjs <eingabe.png> <ausgabe.png> "#0f4f4b"`. Favicon und Vorschaubild zum Teilen bleiben grün.
 - **Navigation** in `components/navigation.ts`: Gruppen "Neurologie" und "Selbstzahler" als Aufklappmenü, dazu "Über mich" und "Kontakt". Header, Handy-Menü und Footer nutzen dieselben Daten.
 - **Farben und Schriften** stehen in `app/globals.css` im Block `@theme`.
 - **SEO:** siehe Abschnitt "Suchmaschinen" unten.

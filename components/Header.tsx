@@ -11,7 +11,7 @@ export function Header() {
       <Container className="flex h-[72px] items-center justify-between gap-6 md:h-[84px]">
         <Link href="/" className="flex items-center gap-3 text-ink no-underline hover:text-ink md:gap-3.5">
           <Image
-            src="/logo-kopf.png"
+            src="/logo-kopf-petrol.png"
             alt=""
             width={276}
             height={362}
