@@ -103,7 +103,7 @@ export default function KetamintherapieSeite() {
             </nav>
             <Eyebrow>Selbstzahlerleistung</Eyebrow>
             <h1 className="font-serif text-[40px] leading-[1.05] font-normal tracking-[-0.01em] md:text-[58px]">
-              Ketamintherapie
+              Ketamin-gestützte Psychotherapie
             </h1>
             <p className="text-lg leading-relaxed text-ink-2">{ketamin.einleitung}</p>
             <div className="mt-1 flex flex-col gap-3 sm:flex-row">
