@@ -77,8 +77,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [ ] Fachliche Freigabe der Ketamin-Texte durch Dr. Brandl, danach die Hinweise "Textvorschlag zur fachlichen Freigabe" entfernen
 - [ ] Hinweis zu Zahlungsarten auf der Kostenseite (`app/kosten/page.tsx`)
 - [x] Porträt Dr. Brandl (`public/bilder/brandl.jpg`). Die Datei ist nur 600 Pixel breit; eine höher aufgelöste Version wäre besser
-- [ ] Startseite: KI-Hintergrundbild (`public/bilder/praxis-ki.jpg`) möglichst durch ein echtes Foto der Praxis ersetzen. Das KI-Bild zeigt einen fiktiven Raum, auf dem Diplom an der Wand steht Fantasietext
-- [ ] Fotos Praxisräume und Behandlungsraum (Komponente `FotoPlatzhalter` in `app/page.tsx` und `app/ketamintherapie/page.tsx` durch `next/image` ersetzen)
+- [ ] Ketamin-Seite: KI-Bild vom Behandlungsraum (`public/bilder/ketamin-behandlungsraum.jpg`) möglichst durch ein echtes Foto ersetzen. Auf dem KI-Bild stehen auf Infusionsbeutel und Pumpe teils unsinnige Fantasietexte (zum Beispiel "zor i.v.-Anwendung", "8.5 mgikgh")
 - [ ] Fachliche Freigabe der Texte zu Behandlungsgebieten (Startseite) und auf `/untersuchungen`, danach die Hinweise "Textvorschlag zur fachlichen Freigabe" entfernen
 - [ ] Nerven- und Muskelsonografie: anbieten? Dann in `content/neurologie.ts` ergänzen
 - [ ] Studien: alle Angaben vor dem Livegang mit futuremeds.de abgleichen (`content/studien.ts`, `studienStand`)
@@ -98,7 +97,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - **Schriften:** Newsreader (Überschriften) und IBM Plex Sans (Text) über `next/font`. Sie werden beim Build
   geladen und von der eigenen Domain ausgeliefert. Beim Seitenaufruf entsteht keine Verbindung zu Google.
 - **Keine Cookies, kein Tracking.** Doctolib ist nur verlinkt. Die Google-Maps-Karte im Kontaktbereich lädt erst nach Klick auf "Karte laden" (`components/KarteMitZustimmung.tsx`); vorher fließen keine Daten an Google. Die Zustimmung wird nicht gespeichert.
-- **KI-generierte Bilder** (Startseite und Studienseite) werden doppelt gekennzeichnet (EU AI Act, Art. 50): sichtbar mit dem Etikett "KI-generiert" und maschinenlesbar in den XMP-Metadaten (IPTC DigitalSourceType `trainedAlgorithmicMedia`). Neue Bilder immer mit `node scripts/ki-bild.mjs <eingabe> <ausgabe.jpg> "<Beschreibung>" [Breite]` aufbereiten, sichtbar mit `<KiEtikett />` (`components/ui.tsx`) kennzeichnen und mit `unoptimized` einbinden, sonst entfernt die Bildoptimierung die Metadaten.
+- **KI-generierte Bilder** (Ketamin-Seite und Studienseite) werden doppelt gekennzeichnet (EU AI Act, Art. 50): sichtbar mit dem Etikett "KI-generiert" und maschinenlesbar in den XMP-Metadaten (IPTC DigitalSourceType `trainedAlgorithmicMedia`). Neue Bilder immer mit `node scripts/ki-bild.mjs <eingabe> <ausgabe.jpg> "<Beschreibung>" [Breite]` aufbereiten, sichtbar mit `<KiEtikett />` (`components/ui.tsx`) kennzeichnen und mit `unoptimized` einbinden, sonst entfernt die Bildoptimierung die Metadaten.
 - **Logo im Header** in Petrol (Farbe der Buttons): `public/logo-kopf-petrol.png`, erzeugt aus dem grünen `public/logo-kopf.png` mit `node scripts/logo-einfaerben.mjs <eingabe.png> <ausgabe.png> "#0f4f4b"`. Favicon und Vorschaubild zum Teilen bleiben grün.
 - **Navigation** in `components/navigation.ts`: Gruppen "Neurologie" und "Selbstzahler" als Aufklappmenü, dazu "Über mich" und "Kontakt". Header, Handy-Menü und Footer nutzen dieselben Daten.
 - **Farben und Schriften** stehen in `app/globals.css` im Block `@theme`.

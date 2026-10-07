@@ -11,8 +11,8 @@ import {
   BuchenButton,
   Container,
   Eyebrow,
-  FotoPlatzhalter,
   Freigabehinweis,
+  KiEtikett,
   Platzhalter,
   Punktliste,
   TelefonButton,
@@ -103,7 +103,7 @@ export default function KetamintherapieSeite() {
             </nav>
             <Eyebrow>Selbstzahlerleistung</Eyebrow>
             <h1 className="font-serif text-[40px] leading-[1.05] font-normal tracking-[-0.01em] md:text-[58px]">
-              Ketamintherapie
+              Ketamin-gestützte Psychotherapie
             </h1>
             <p className="text-lg leading-relaxed text-ink-2">{ketamin.einleitung}</p>
             <div className="mt-1 flex flex-col gap-3 sm:flex-row">
@@ -111,7 +111,18 @@ export default function KetamintherapieSeite() {
               <TelefonButton className="min-h-[54px] px-7" />
             </div>
           </div>
-          <FotoPlatzhalter label="Behandlungsraum" className="h-64 md:h-[380px]" />
+          {/* KI-generiert. unoptimized: Die Bildoptimierung würde die KI-Kennzeichnung in den Metadaten entfernen. */}
+          <figure className="relative h-64 overflow-hidden rounded border border-hair bg-sand-2 md:h-[380px]">
+            <Image
+              src="/bilder/ketamin-behandlungsraum.jpg"
+              alt="KI-generierte Illustration: Behandlungsraum mit Infusionsständer und Infusionspumpe"
+              fill
+              unoptimized
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-[60%_center]"
+            />
+            <KiEtikett />
+          </figure>
         </Container>
       </section>
 

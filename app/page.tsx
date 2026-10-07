@@ -13,7 +13,6 @@ import {
   BuchenButton,
   Container,
   Eyebrow,
-  KiEtikett,
   Freigabehinweis,
   Platzhalter,
   Punktliste,
@@ -43,21 +42,6 @@ export default function Startseite() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Hintergrundbild, KI-generiert. unoptimized: Die Bildoptimierung würde die KI-Kennzeichnung in den Metadaten entfernen. */}
-      <Image
-        src="/bilder/praxis-ki.jpg"
-        alt=""
-        fill
-        priority
-        unoptimized
-        className="object-cover object-[70%_center]"
-      />
-      {/* Aufhellung: auf dem Handy flächig, ab Desktop von links nach rechts auslaufend, damit der Text lesbar bleibt */}
-      <div
-        className="absolute inset-0 bg-ground/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-ground lg:from-25% lg:via-ground/80 lg:via-45% lg:to-ground/0 lg:to-75%"
-        aria-hidden="true"
-      />
-      <KiEtikett className="right-3 bottom-3" />
       <Container className="relative py-16 md:py-24 lg:py-28">
         <div className="flex max-w-[640px] flex-col gap-5">
           <Eyebrow>{praxis.abrechnung}</Eyebrow>
