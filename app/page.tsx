@@ -42,7 +42,7 @@ export default function Startseite() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <Container className="relative py-16 md:py-24 lg:py-28">
+      <Container className="relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[minmax(0,640px)_minmax(0,1fr)] lg:py-28">
         <div className="flex max-w-[640px] flex-col gap-5">
           <Eyebrow>{praxis.abrechnung}</Eyebrow>
           <h1 className="font-serif text-4xl leading-[1.08] font-normal tracking-[-0.01em] md:text-[56px]">
@@ -65,8 +65,30 @@ function Hero() {
           </div>
           <p className="text-sm text-ink-2">{praxis.onlineBuchung}</p>
         </div>
+        <LogoBuehne />
       </Container>
     </section>
+  );
+}
+
+/** Praxislogo als ruhiger Blickfang rechts im Einstieg, ab Desktop-Breite. Rein dekorativ. */
+function LogoBuehne() {
+  return (
+    <div aria-hidden="true" className="relative mx-auto hidden aspect-square w-full max-w-[400px] lg:block">
+      <div className="absolute inset-0 rounded-full bg-accent-soft" />
+      <div className="absolute inset-[9%] rounded-full border border-accent/15" />
+      <div className="absolute inset-[18%] rounded-full bg-surface shadow-[0_24px_60px_-24px_rgba(15,79,75,0.35)]" />
+      <span className="absolute top-[13%] right-[16%] size-3 rounded-full bg-leaf" />
+      <span className="absolute bottom-[17%] left-[11%] size-2 rounded-full bg-accent/30" />
+      <Image
+        src="/logo-kopf-petrol.png"
+        alt=""
+        width={276}
+        height={362}
+        sizes="150px"
+        className="absolute top-1/2 left-1/2 h-[44%] w-auto -translate-x-[54%] -translate-y-1/2"
+      />
+    </div>
   );
 }
 

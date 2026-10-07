@@ -72,6 +72,12 @@ export default function ImpressumSeite() {
         <p>
           {praxis.arzt}, Anschrift wie oben
         </p>
+        <p>
+          Konzeption und Umsetzung der Website:{" "}
+          <a href="https://ai-setta.com" target="_blank" rel="noopener">
+            AI SETTA
+          </a>
+        </p>
       </div>
 
       <div>
