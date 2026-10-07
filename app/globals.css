@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/*
+ * Designsystem "Klinische Klarheit" (Variante A aus dem Entwurf).
+ * Warmes Off-White als Grund, Petrol als Akzent, Sand für ruhige Flächen.
+ * Überschriften in Newsreader, Text in IBM Plex Sans.
+ */
+@theme {
+  --color-ground: #fbfaf7;
+  --color-surface: #ffffff;
+  --color-sand: #f4f1ea;
+  --color-sand-2: #efe9dc;
+  --color-ink: #10302f;
+  --color-ink-2: #3a504e;
+  --color-muted: #5e7270;
+  --color-hair: #e4e0d6;
+  --color-hair-soft: #edeae1;
+
+  --color-accent: #0f4f4b;
+  --color-accent-dark: #0a3532;
+  --color-accent-soft: #eef3f2;
+
+  --color-night: #10302f;
+  --color-night-2: #173b3a;
+  --color-night-line: #2b4a48;
+  --color-night-foot: #0c2726;
+  --color-on-night: #f2efe7;
+  --color-on-night-2: #c6d6d3;
+  --color-mint: #7fb3ac;
+  --color-night-link: #a9d3cc;
+  --color-night-border: #4a6e6b;
+  --color-foot-text: #b9ccc9;
+  --color-foot-line: #22403e;
+  --color-foot-muted: #8aa5a2;
+
+  /* Farben aus dem Praxislogo (Grün und Braun). Grün nur dekorativ, als Schrift auf Hell zu kontrastarm. */
+  --color-leaf: #94c06a;
+  --color-bark: #31130b;
+
+  /* Noch fehlende Angaben werden in dieser Farbe als [Platzhalter] gezeigt. */
+  --color-placeholder: #7a6a45;
+  --color-placeholder-soft: #f3ead3;
+
+  --font-sans: var(--schrift-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--schrift-serif), Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  a {
+    color: var(--color-accent);
+  }
+
+  a:hover {
+    color: var(--color-accent-dark);
+  }
+
+  /* Sichtbarer Fokus für die Bedienung per Tastatur. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Kleines Label über Überschriften. */
+  .eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .eyebrow-muted {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/*
+ * Farbvariante "Braun" zum Vergleich für Dr. Brandl: dunkle Flächen in den Brauntönen
+ * des Logos, Akzente auf Dunkel in Logo-Grün. Aktiv mit ?farbe=braun (siehe app/layout.tsx).
+ * VORÜBERGEHEND: nach der Entscheidung entfernen oder als Standard übernehmen.
+ */
+html[data-farbe="braun"] {
+  --color-night: #33190f;
+  --color-night-2: #43261a;
+  --color-night-line: #5c3b2b;
+  --color-night-foot: #26110a;
+  --color-on-night: #f5efe6;
+  --color-on-night-2: #e2d3c6;
+  --color-mint: #a9cf82;
+  --color-night-link: #bddb98;
+  --color-night-border: #7a5a49;
+  --color-foot-text: #dccbbd;
+  --color-foot-line: #4a2c1f;
+  --color-foot-muted: #b9a291;
+}
