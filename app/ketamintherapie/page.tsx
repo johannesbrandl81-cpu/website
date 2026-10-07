@@ -17,12 +17,11 @@ import {
   Punktliste,
   TelefonButton,
 } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { seo } from "@/content/seo";
+import { brotkrumenJsonLd, medizinischeSeiteJsonLd, seitenMetadaten } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Ketamintherapie",
-  description:
-    "Ketamin als Infusion in der Neurologischen Praxis Tempelhof: ärztlich durchgeführt und überwacht, psychotherapeutisch begleitet. Ablauf, Sicherheit und Kosten.",
-};
+export const metadata: Metadata = seitenMetadaten(seo.ketamintherapie, "/ketamintherapie");
 
 /** Zeigt den Wert oder einen Platzhalter. */
 function Wert({ wert, platzhalter }: { wert: string | null; platzhalter: string }) {
@@ -80,6 +79,17 @@ export default function KetamintherapieSeite() {
 
   return (
     <>
+      <JsonLd
+        daten={[
+          brotkrumenJsonLd("Ketamintherapie", "/ketamintherapie"),
+          medizinischeSeiteJsonLd({
+            name: seo.ketamintherapie.titel,
+            beschreibung: seo.ketamintherapie.beschreibung,
+            pfad: "/ketamintherapie",
+            thema: { "@type": "MedicalTherapy", name: "Ketamintherapie als Infusion" },
+          }),
+        ]}
+      />
       {/* Einstieg */}
       <section className="py-12 md:py-20">
         <Container className="grid items-center gap-10 lg:grid-cols-[620px_minmax(0,1fr)] lg:gap-16">

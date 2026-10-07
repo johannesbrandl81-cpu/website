@@ -31,9 +31,11 @@ Voraussetzung: Node.js 20 oder neuer.
 ## Aufbau
 
 ```
-app/          Seiten (App Router), globale Styles, Sitemap, robots.txt
+app/          Seiten (App Router), globale Styles, Sitemap, robots.txt, Vorschaubild zum Teilen
 components/   Header, Footer, Logoleiste, mobile Buchungsleiste, UI-Bausteine
 content/      Alle Texte und Stammdaten als typisierte Dateien
+lib/seo.ts    Metadaten und strukturierte Daten für Suchmaschinen
+assets/       Schriftdateien für das Vorschaubild (SIL Open Font License)
 public/logos/ Logos der Mitgliedschaften
 public/bilder/ Porträtfotos
 ```
@@ -48,6 +50,7 @@ public/bilder/ Porträtfotos
 | `content/studien.ts` | Studien mit Eckdaten und Stand |
 | `content/ueber-mich.ts` | Begrüßung, Über mich, Werdegang, Mitgliedschaften und Logos |
 | `content/ketamin.ts` | Alle Texte und Ablaufdaten der Ketamin-Seite |
+| `content/seo.ts` | Titel und Beschreibungen für Google je Seite |
 
 ## Platzhalter
 
@@ -80,7 +83,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [ ] Nerven- und Muskelsonografie: anbieten? Dann in `content/neurologie.ts` ergänzen
 - [ ] Studien: alle Angaben vor dem Livegang mit futuremeds.de abgleichen (`content/studien.ts`, `studienStand`)
 - [ ] Studien: klären, ob die Praxis für die Vermittlung vergütet wird (dann rechtlich prüfen lassen)
-- [ ] Logo als Originaldatei (SVG oder PNG ab 1000 px). `public/logo-kopf.png`, `app/icon.png` und `app/apple-icon.png` sind aus einem kleinen Bild freigestellt
+- [ ] Logo als Originaldatei (SVG oder PNG ab 1000 px). `public/logo-kopf.png`, `app/icon.png` und `app/apple-icon.png` sind aus einem kleinen Bild freigestellt. Danach die Petrol-Version für den Header mit `scripts/logo-einfaerben.mjs` neu erzeugen
 - [ ] Farbvariante entscheiden: Vorschau mit `?farbe=braun`, zurück mit `?farbe=petrol`. Danach Skript in `app/layout.tsx` und Block `html[data-farbe="braun"]` in `app/globals.css` entfernen oder die Werte als Standard übernehmen
 - [x] Studien: Bild für Narkolepsie ergänzen (mit `scripts/ki-bild.mjs` aufbereiten, in `content/studien.ts` als `bild` eintragen)
 - [ ] Logo Arbeitskreis Botulinumtoxin (in `public/logos/` ablegen und in `content/ueber-mich.ts` eintragen)
@@ -96,11 +99,37 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
   geladen und von der eigenen Domain ausgeliefert. Beim Seitenaufruf entsteht keine Verbindung zu Google.
 - **Keine Cookies, kein Tracking.** Doctolib ist nur verlinkt. Die Google-Maps-Karte im Kontaktbereich lädt erst nach Klick auf "Karte laden" (`components/KarteMitZustimmung.tsx`); vorher fließen keine Daten an Google. Die Zustimmung wird nicht gespeichert.
 - **KI-generierte Bilder** (Startseite und Studienseite) werden doppelt gekennzeichnet (EU AI Act, Art. 50): sichtbar mit dem Etikett "KI-generiert" und maschinenlesbar in den XMP-Metadaten (IPTC DigitalSourceType `trainedAlgorithmicMedia`). Neue Bilder immer mit `node scripts/ki-bild.mjs <eingabe> <ausgabe.jpg> "<Beschreibung>" [Breite]` aufbereiten, sichtbar mit `<KiEtikett />` (`components/ui.tsx`) kennzeichnen und mit `unoptimized` einbinden, sonst entfernt die Bildoptimierung die Metadaten.
+- **Logo im Header** in Petrol (Farbe der Buttons): `public/logo-kopf-petrol.png`, erzeugt aus dem grünen `public/logo-kopf.png` mit `node scripts/logo-einfaerben.mjs <eingabe.png> <ausgabe.png> "#0f4f4b"`. Favicon und Vorschaubild zum Teilen bleiben grün.
 - **Navigation** in `components/navigation.ts`: Gruppen "Neurologie" und "Selbstzahler" als Aufklappmenü, dazu "Über mich" und "Kontakt". Header, Handy-Menü und Footer nutzen dieselben Daten.
 - **Farben und Schriften** stehen in `app/globals.css` im Block `@theme`.
-- **Strukturierte Daten** (schema.org `Physician`) im Layout für die lokale Suche.
+- **SEO:** siehe Abschnitt "Suchmaschinen" unten.
 - **Sicherheits-Header** in `next.config.ts`.
 - Alle Seiten werden beim Build statisch erzeugt.
+
+## Suchmaschinen (SEO)
+
+**Im Code umgesetzt:**
+
+- **Titel und Beschreibung je Seite** in `content/seo.ts`, mit Ort und Suchbegriff. Unterseiten bekommen automatisch " | Neurologische Praxis Tempelhof" angehängt.
+- **Kanonische Adresse** je Seite (`alternates.canonical`). Google wertet nur die echte Domain, nicht www, Vercel-Adressen oder `?farbe=braun`.
+- **Vorschau-Deployments gesperrt:** Auf Vercel-Vorschauen (`VERCEL_ENV` ungleich `production`) liefert `robots.txt` "Disallow: /" und jede Seite `noindex`. Die Produktion bleibt indexierbar.
+- **Impressum und Datenschutz** stehen auf `noindex` und fehlen in der Sitemap.
+- **Vorschaubild zum Teilen** (WhatsApp, LinkedIn, Facebook, X): `app/opengraph-image.tsx`, wird beim Build erzeugt. Bewusst ohne KI-Bild.
+- **Strukturierte Daten** (schema.org) in `lib/seo.ts`:
+  - `Physician` mit Adresse, Sprechzeiten, Schwerpunkten, Untersuchungen, Karte und Doctolib-Profil
+  - auf Unterseiten `BreadcrumbList`
+  - auf `/untersuchungen` und `/ketamintherapie` zusätzlich `MedicalWebPage`
+  - Telefon und E-Mail erscheinen automatisch, sobald sie in `content/praxis.ts` stehen.
+- **Sitemap** mit festem Änderungsdatum je Seite (`app/sitemap.ts`). Bei Textänderungen das Datum dort anpassen.
+
+**Außerhalb des Codes (offen):**
+
+- [ ] **Google Unternehmensprofil** anlegen oder übernehmen (Kategorie "Neurologe"). Name, Adresse, Telefon und Sprechzeiten genau wie auf der Website, Website-Link setzen, Fotos hochladen. Wichtigster Hebel für die lokale Suche.
+- [ ] **Google Search Console:** Domain per DNS-Eintrag bei IONOS bestätigen, `https://neurologie-praxistempelhof.de/sitemap.xml` einreichen. Optional Bing Webmaster Tools.
+- [ ] **Einheitliche Einträge** bei Doctolib, Jameda, KV Berlin und Ärztekammer: gleiche Schreibweise von Name, Adresse und Telefon, Link zur Website.
+- [ ] **Vercel Domains:** `www.neurologie-praxistempelhof.de` als Weiterleitung auf `neurologie-praxistempelhof.de` einrichten (Settings → Domains, "Redirect to").
+- [ ] Vor dem Livegang alle Platzhalter in eckigen Klammern füllen, sonst indexiert Google sie mit.
+- [ ] Geokoordinaten der Praxis in die strukturierten Daten aufnehmen (optional, Google ermittelt sie auch aus der Adresse).
 
 ## Nach GitHub und Vercel
 

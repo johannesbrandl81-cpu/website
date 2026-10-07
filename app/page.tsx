@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { leistungen } from "@/content/leistungen";
@@ -18,6 +19,13 @@ import {
   Punktliste,
   TelefonButton,
 } from "@/components/ui";
+import { startseiteBeschreibung, startseiteTitel } from "@/content/seo";
+import { seitenMetadaten } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  ...seitenMetadaten({ titel: startseiteTitel, beschreibung: startseiteBeschreibung }, "/"),
+  title: { absolute: startseiteTitel },
+};
 
 export default function Startseite() {
   return (
@@ -209,7 +217,7 @@ function UeberMich() {
         <div className="relative aspect-[600/538] w-full self-start overflow-hidden rounded border border-hair bg-sand-2">
           <Image
             src={praxis.foto.src}
-            alt={praxis.arzt}
+            alt={`${praxis.arzt}, ${praxis.fachrichtung}`}
             fill
             sizes="(min-width: 1024px) 480px, 100vw"
             className="object-cover"

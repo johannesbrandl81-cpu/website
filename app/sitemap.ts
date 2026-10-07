@@ -1,21 +1,22 @@
 import type { MetadataRoute } from "next";
 import { praxis } from "@/content/praxis";
 
+/**
+ * Indexierbare Seiten mit dem Datum der letzten inhaltlichen Änderung.
+ * Bei Textänderungen auf einer Seite das Datum hier mit anpassen.
+ * Impressum und Datenschutz fehlen bewusst, sie stehen auf noindex.
+ */
+const seiten: { pfad: string; geaendert: string }[] = [
+  { pfad: "", geaendert: "2026-10-07" },
+  { pfad: "/untersuchungen", geaendert: "2026-10-07" },
+  { pfad: "/ketamintherapie", geaendert: "2026-10-07" },
+  { pfad: "/kosten", geaendert: "2026-10-07" },
+  { pfad: "/studien", geaendert: "2026-10-07" },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const jetzt = new Date();
-  const seiten = [
-    { pfad: "", prioritaet: 1 },
-    { pfad: "/ketamintherapie", prioritaet: 0.8 },
-    { pfad: "/untersuchungen", prioritaet: 0.8 },
-    { pfad: "/kosten", prioritaet: 0.7 },
-    { pfad: "/studien", prioritaet: 0.5 },
-    { pfad: "/impressum", prioritaet: 0.2 },
-    { pfad: "/datenschutz", prioritaet: 0.2 },
-  ];
   return seiten.map((s) => ({
     url: `${praxis.domain}${s.pfad}`,
-    lastModified: jetzt,
-    changeFrequency: "monthly" as const,
-    priority: s.prioritaet,
+    lastModified: s.geaendert,
   }));
 }

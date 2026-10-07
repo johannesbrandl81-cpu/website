@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { praxis, telefonHref } from "@/content/praxis";
 import { Platzhalter } from "@/components/ui";
 import { Rechtstext } from "@/components/Rechtstext";
+import { seo } from "@/content/seo";
+import { seitenMetadaten } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung",
+  ...seitenMetadaten(seo.datenschutz, "/datenschutz"),
   robots: { index: false, follow: true },
 };
 

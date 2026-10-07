@@ -4,16 +4,26 @@ import { Fachkarte } from "@/components/Fachkarte";
 import { PfeilIcon } from "@/components/Icons";
 import { einleitungUntersuchungen, mitbringen, untersuchungen, vorbereitungJeUntersuchung } from "@/content/neurologie";
 import { BuchenButton, Container, Eyebrow, Freigabehinweis, Punktliste, TelefonButton } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { seo } from "@/content/seo";
+import { brotkrumenJsonLd, medizinischeSeiteJsonLd, seitenMetadaten } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Untersuchungen und Vorbereitung",
-  description:
-    "Neurologische Untersuchungen in der Praxis Tempelhof: EEG, ENG, EMG, evozierte Potenziale, Ultraschall der Halsgefäße, transkranieller Doppler, Gedächtnistestung, Lumbalpunktion, Labor. Mit Hinweisen zur Vorbereitung auf den Termin.",
-};
+export const metadata: Metadata = seitenMetadaten(seo.untersuchungen, "/untersuchungen");
 
 export default function UntersuchungenSeite() {
   return (
     <>
+      <JsonLd
+        daten={[
+          brotkrumenJsonLd("Untersuchungen", "/untersuchungen"),
+          medizinischeSeiteJsonLd({
+            name: seo.untersuchungen.titel,
+            beschreibung: seo.untersuchungen.beschreibung,
+            pfad: "/untersuchungen",
+            thema: untersuchungen.map((u) => ({ "@type": "DiagnosticProcedure", name: u.titel })),
+          }),
+        ]}
+      />
       <section className="pt-12 pb-10 md:pt-16 md:pb-14">
         <Container>
           <nav aria-label="Brotkrumen" className="text-sm text-muted">
