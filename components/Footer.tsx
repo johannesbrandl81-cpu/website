@@ -59,10 +59,18 @@ export function Footer() {
         </nav>
       </Container>
       <Container>
-        <p className="border-t border-foot-line py-6 text-[13px] leading-relaxed text-foot-muted">
-          Die Inhalte dieser Website dienen der Information und ersetzen keine ärztliche Beratung, Diagnose oder
-          Behandlung.
-        </p>
+        <div className="flex flex-col gap-2 border-t border-foot-line py-6 text-[13px] leading-relaxed text-foot-muted md:flex-row md:items-baseline md:justify-between md:gap-8">
+          <p>
+            Die Inhalte dieser Website dienen der Information und ersetzen keine ärztliche Beratung, Diagnose oder
+            Behandlung.
+          </p>
+          <p className="shrink-0">
+            Website:{" "}
+            <a href="https://ai-setta.com" target="_blank" rel="noopener" className="text-foot-text">
+              AI SETTA
+            </a>
+          </p>
+        </div>
       </Container>
     </footer>
   );
