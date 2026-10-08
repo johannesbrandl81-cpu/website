@@ -88,7 +88,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [ ] Logo Arbeitskreis Botulinumtoxin (in `public/logos/` ablegen und in `content/ueber-mich.ts` eintragen)
 - [ ] Größere Datei des BGPN-Logos (die vorhandene ist nur 98 × 115 Pixel)
 - [ ] Zustimmung der Vereine zur Nutzung ihrer Logos
-- [ ] Impressum vervollständigen (Anschrift der KV, Link zur Berufsordnung) und prüfen lassen. Staat und Ärztekammer sind eingetragen
+- [ ] Impressum: E-Mail-Adresse fehlt noch, danach prüfen lassen. Berufsbezeichnung, Ärztekammer, KV und berufsrechtliche Regelungen sind eingetragen
 - [ ] Datenschutzerklärung vervollständigen (Hosting, Speicherdauer, Auftragsverarbeitung) und prüfen lassen, inklusive Abschnitt zur Google-Maps-Karte
 - [ ] Danach die Entwurfshinweise auf Impressum und Datenschutz entfernen (`hinweis` in `app/impressum/page.tsx` und `app/datenschutz/page.tsx`)
 

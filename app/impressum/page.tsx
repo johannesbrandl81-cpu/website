@@ -49,12 +49,16 @@ export default function ImpressumSeite() {
       </div>
 
       <div>
-        <h2>Berufsbezeichnung und berufsrechtliche Angaben</h2>
+        <h2>Berufsbezeichnung</h2>
         <p>
           Gesetzliche Berufsbezeichnung: Arzt ({praxis.fachrichtung})
           <br />
           Verliehen in: Bundesrepublik Deutschland
         </p>
+      </div>
+
+      <div>
+        <h2>Berufsrechtliche Regelungen</h2>
         <p>
           Zuständige Kammer:
           <br />
@@ -70,12 +74,27 @@ export default function ImpressumSeite() {
           </a>
         </p>
         <p>
-          Zuständige Kassenärztliche Vereinigung: Kassenärztliche Vereinigung Berlin,{" "}
-          <Platzhalter>Anschrift</Platzhalter>
+          Zuständige kassenärztliche Vereinigung:
+          <br />
+          Kassenärztliche Vereinigung Berlin
+          <br />
+          Masurenallee 6A
+          <br />
+          14057 Berlin
+          <br />
+          Website:{" "}
+          <a href="https://www.kvberlin.de" target="_blank" rel="noopener">
+            www.kvberlin.de
+          </a>
         </p>
-        <p>
-          Es gelten die Berufsordnung der Ärztekammer Berlin und das Berliner Heilberufekammergesetz.{" "}
-          <Platzhalter>Link zu den berufsrechtlichen Regelungen</Platzhalter>
+        <h3 className="mt-5 font-semibold text-ink">Berufsrechtliche Regelungen</h3>
+        <p className="mt-1">
+          Es gelten die berufsrechtlichen Regelungen der Ärztekammer Berlin.
+          <br />
+          Die Regelungen sind einsehbar unter:{" "}
+          <a href="https://www.aerztekammer-berlin.de" target="_blank" rel="noopener">
+            www.aerztekammer-berlin.de
+          </a>
         </p>
       </div>
 
