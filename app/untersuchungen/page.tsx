@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Fachkarte } from "@/components/Fachkarte";
 import { PfeilIcon } from "@/components/Icons";
 import { einleitungUntersuchungen, mitbringen, untersuchungen, vorbereitungJeUntersuchung } from "@/content/neurologie";
-import { BuchenButton, Container, Eyebrow, Freigabehinweis, Punktliste, TelefonButton } from "@/components/ui";
+import { BuchenButton, Container, Eyebrow, Punktliste, TelefonButton } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { seo } from "@/content/seo";
 import { brotkrumenJsonLd, medizinischeSeiteJsonLd, seitenMetadaten } from "@/lib/seo";
@@ -53,8 +53,7 @@ export default function UntersuchungenSeite() {
 
       <section id="untersuchungen" className="scroll-mt-24 border-y border-hair bg-sand py-14 md:py-[88px]">
         <Container>
-          <Freigabehinweis />
-          <Eyebrow className="mt-5">Diagnostik in der Praxis</Eyebrow>
+          <Eyebrow>Diagnostik in der Praxis</Eyebrow>
           <h2 className="mt-3 font-serif text-3xl leading-tight font-normal md:text-[40px]">Untersuchungsmethoden</h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">
             {untersuchungen.map((k) => (
@@ -74,7 +73,6 @@ export default function UntersuchungenSeite() {
       <section id="vorbereitung" className="scroll-mt-24 py-14 md:py-[88px]">
         <Container className="grid gap-10 lg:grid-cols-[400px_minmax(0,1fr)] lg:gap-16">
           <div className="flex flex-col gap-4">
-            <Freigabehinweis />
             <Eyebrow>Ihr Termin</Eyebrow>
             <h2 className="font-serif text-3xl leading-tight font-normal md:text-[40px]">Vorbereitung auf den Termin</h2>
             <h3 className="eyebrow-muted mt-4">Bitte mitbringen</h3>

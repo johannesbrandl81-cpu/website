@@ -74,12 +74,11 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [x] Psychotherapeutin: Name (Stella Savelsberg), Berufsbezeichnung, Link zu ihrer Website (`content/ketamin.ts`)
 - [x] Psychotherapeutin: Kurzvorstellung (`content/ketamin.ts`, Feld `text`)
 - [ ] **Foto Stella Savelsberg:** Eingebaut ist ein zugeschnittenes Vorschaubild des Fotografen (Original trägt das Wasserzeichen "NUR ZUR AUSWAHL"). Vor dem Livegang durch die lizenzierte Datei ersetzen und das Nutzungsrecht für die Website klären (`public/bilder/savelsberg.jpg`)
-- [ ] Ketamin-Seite: Wirkung, Verträglichkeit, Ablauf und Anwendungsgebiete stammen von Dr. Brandl. Noch freizugeben sind "Was ist Ketamin?" und "Wann keine Behandlung erfolgt" (Hinweis "Textvorschlag zur fachlichen Freigabe")
+- [x] Hinweise "Textvorschlag zur fachlichen Freigabe" entfernt (Oktober 2026). Die Fachtexte gelten damit als von Dr. Brandl freigegeben; Änderungen kommen in der letzten Korrekturschleife
 - [ ] Ketamin-Texte und Preisliste (u. a. Markenname "Medivitan") rechtlich nach Heilmittelwerbegesetz prüfen lassen
 - [x] Hinweis zu Zahlungsarten auf der Kostenseite (`app/kosten/page.tsx`)
 - [x] Porträt Dr. Brandl (`public/bilder/brandl.jpg`). Die Datei ist nur 600 Pixel breit; eine höher aufgelöste Version wäre besser
 - [ ] Ketamin-Seite: KI-Bild vom Behandlungsraum (`public/bilder/ketamin-behandlungsraum.jpg`) möglichst durch ein echtes Foto ersetzen. Auf dem KI-Bild stehen auf Infusionsbeutel und Pumpe teils unsinnige Fantasietexte (zum Beispiel "zor i.v.-Anwendung", "8.5 mgikgh")
-- [ ] Fachliche Freigabe der Texte zu Behandlungsgebieten (Startseite) und auf `/untersuchungen`, danach die Hinweise "Textvorschlag zur fachlichen Freigabe" entfernen
 - [ ] Nerven- und Muskelsonografie: anbieten? Dann in `content/neurologie.ts` ergänzen
 - [ ] Studien: alle Angaben vor dem Livegang mit futuremeds.de abgleichen (`content/studien.ts`, `studienStand`)
 - [ ] Studien: klären, ob die Praxis für die Vermittlung vergütet wird (dann rechtlich prüfen lassen)
