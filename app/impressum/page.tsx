@@ -53,11 +53,23 @@ export default function ImpressumSeite() {
         <p>
           Gesetzliche Berufsbezeichnung: Arzt ({praxis.fachrichtung})
           <br />
-          Verliehen in: <Platzhalter>Staat, in dem die Berufsbezeichnung verliehen wurde</Platzhalter>
+          Verliehen in: Bundesrepublik Deutschland
         </p>
         <p>
-          Zuständige Kammer: Ärztekammer Berlin, <Platzhalter>Anschrift</Platzhalter>
+          Zuständige Kammer:
           <br />
+          Ärztekammer Berlin
+          <br />
+          Friedrichstraße 16
+          <br />
+          10969 Berlin
+          <br />
+          Website:{" "}
+          <a href="https://www.aerztekammer-berlin.de" target="_blank" rel="noopener">
+            www.aerztekammer-berlin.de
+          </a>
+        </p>
+        <p>
           Zuständige Kassenärztliche Vereinigung: Kassenärztliche Vereinigung Berlin,{" "}
           <Platzhalter>Anschrift</Platzhalter>
         </p>

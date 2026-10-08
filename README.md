@@ -62,20 +62,21 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 
 ### Noch offen vor dem Livegang
 
-- [ ] Telefonnummer (`content/praxis.ts`)
+- [x] Telefonnummer (`content/praxis.ts`)
 - [ ] E-Mail-Adresse (`content/praxis.ts`)
 - [x] Sprechzeiten je Wochentag (`content/praxis.ts`)
 - [x] Anbindung mit öffentlichen Verkehrsmitteln (`content/praxis.ts`)
 - [x] Preise als Selbstzahler ohne Kassentermin (`selbstzahlerKasse` in `content/leistungen.ts`)
-- [ ] Preise der Selbstzahlerleistungen (IGeL), von Dr. Brandl angekündigt (`content/leistungen.ts`)
-- [ ] Ketamintherapie: Anzahl Infusionen, Zeitraum, Dauer, Überwachung, Nachbeobachtung, Begleitgespräche (`content/ketamin.ts`)
-- [ ] Ketamintherapie: weitere Anwendungsgebiete (`content/ketamin.ts`, Liste `anwendungsgebiete`; den Platzhalter "Weitere Anwendungsgebiete" in `app/ketamintherapie/page.tsx` danach entfernen)
+- [x] Preise der Selbstzahlerleistungen (IGeL) (`content/leistungen.ts`)
+- [x] Ketamintherapie: Ablauf, Dauer, Überwachung, Nachbeobachtung (`content/ketamin.ts`)
+- [x] Ketamintherapie: Anwendungsgebiete (`content/ketamin.ts`)
 - [ ] Ketamintherapie: Hinweise zu Essen und Trinken vor der Infusion (`app/ketamintherapie/page.tsx`)
 - [x] Psychotherapeutin: Name (Stella Savelsberg), Berufsbezeichnung, Link zu ihrer Website (`content/ketamin.ts`)
 - [x] Psychotherapeutin: Kurzvorstellung (`content/ketamin.ts`, Feld `text`)
 - [ ] **Foto Stella Savelsberg:** Eingebaut ist ein zugeschnittenes Vorschaubild des Fotografen (Original trägt das Wasserzeichen "NUR ZUR AUSWAHL"). Vor dem Livegang durch die lizenzierte Datei ersetzen und das Nutzungsrecht für die Website klären (`public/bilder/savelsberg.jpg`)
-- [ ] Fachliche Freigabe der Ketamin-Texte durch Dr. Brandl, danach die Hinweise "Textvorschlag zur fachlichen Freigabe" entfernen
-- [ ] Hinweis zu Zahlungsarten auf der Kostenseite (`app/kosten/page.tsx`)
+- [ ] Ketamin-Seite: Wirkung, Verträglichkeit, Ablauf und Anwendungsgebiete stammen von Dr. Brandl. Noch freizugeben sind "Was ist Ketamin?" und "Wann keine Behandlung erfolgt" (Hinweis "Textvorschlag zur fachlichen Freigabe")
+- [ ] Ketamin-Texte und Preisliste (u. a. Markenname "Medivitan") rechtlich nach Heilmittelwerbegesetz prüfen lassen
+- [x] Hinweis zu Zahlungsarten auf der Kostenseite (`app/kosten/page.tsx`)
 - [x] Porträt Dr. Brandl (`public/bilder/brandl.jpg`). Die Datei ist nur 600 Pixel breit; eine höher aufgelöste Version wäre besser
 - [ ] Ketamin-Seite: KI-Bild vom Behandlungsraum (`public/bilder/ketamin-behandlungsraum.jpg`) möglichst durch ein echtes Foto ersetzen. Auf dem KI-Bild stehen auf Infusionsbeutel und Pumpe teils unsinnige Fantasietexte (zum Beispiel "zor i.v.-Anwendung", "8.5 mgikgh")
 - [ ] Fachliche Freigabe der Texte zu Behandlungsgebieten (Startseite) und auf `/untersuchungen`, danach die Hinweise "Textvorschlag zur fachlichen Freigabe" entfernen
@@ -88,7 +89,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [ ] Logo Arbeitskreis Botulinumtoxin (in `public/logos/` ablegen und in `content/ueber-mich.ts` eintragen)
 - [ ] Größere Datei des BGPN-Logos (die vorhandene ist nur 98 × 115 Pixel)
 - [ ] Zustimmung der Vereine zur Nutzung ihrer Logos
-- [ ] Impressum vervollständigen (Staat der Berufsbezeichnung, Anschriften von Ärztekammer und KV, Link zur Berufsordnung) und prüfen lassen
+- [ ] Impressum vervollständigen (Anschrift der KV, Link zur Berufsordnung) und prüfen lassen. Staat und Ärztekammer sind eingetragen
 - [ ] Datenschutzerklärung vervollständigen (Hosting, Speicherdauer, Auftragsverarbeitung) und prüfen lassen, inklusive Abschnitt zur Google-Maps-Karte
 - [ ] Danach die Entwurfshinweise auf Impressum und Datenschutz entfernen (`hinweis` in `app/impressum/page.tsx` und `app/datenschutz/page.tsx`)
 

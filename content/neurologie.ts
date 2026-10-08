@@ -110,22 +110,24 @@ export const untersuchungen: Fachkarte[] = [
   },
   {
     id: "eng",
-    titel: "ENG (Elektroneurografie)",
+    titel: "ENG/NLG (Elektroneurografie, Nervenleitgeschwindigkeit)",
     text: "Misst, wie schnell und wie gut Nerven Signale weiterleiten. Kleine Stromimpulse auf der Haut fühlen sich wie ein kurzes Kribbeln an.",
     icon: "strom",
-    selbstzahlerPosten: "Nervenmessung (Elektroneurografie)",
+    selbstzahlerPosten: "Nervenmessung (ENG/NLG)",
   },
   {
     id: "emg",
     titel: "EMG (Elektromyografie)",
     text: "Ableitung der elektrischen Muskelaktivität mit einer feinen Nadelelektrode. Zeigt, ob eine Schwäche vom Muskel oder vom Nerv ausgeht.",
     icon: "muskel",
+    selbstzahlerPosten: "EMG (Elektromyografie)",
   },
   {
     id: "evozierte-potenziale",
     titel: "Evozierte Potenziale",
     text: "Prüfung der Seh-, Hör- und Gefühlsbahnen über gezielte Reize, zum Beispiel bei Verdacht auf Multiple Sklerose.",
     icon: "auge",
+    selbstzahlerPosten: "Evozierte Potenziale",
   },
   {
     id: "ultraschall-halsgefaesse",
@@ -153,6 +155,7 @@ export const untersuchungen: Fachkarte[] = [
     titel: "Lumbalpunktion",
     text: "Entnahme einer kleinen Menge Nervenwasser im unteren Rücken, etwa bei Verdacht auf eine Entzündung des Nervensystems oder in der Demenzdiagnostik.",
     icon: "nadel",
+    selbstzahlerPosten: "Lumbalpunktion",
   },
   {
     id: "labor",
@@ -176,7 +179,7 @@ export const vorbereitungJeUntersuchung: { titel: string; text: string }[] = [
     text: "Bitte waschen Sie am Vortag oder am Morgen die Haare und verzichten Sie auf Gel, Haarspray oder Öl. Nehmen Sie Ihre Medikamente wie gewohnt ein, sofern nichts anderes besprochen ist.",
   },
   {
-    titel: "ENG und EMG",
+    titel: "ENG/NLG und EMG",
     text: "Bitte am Untersuchungstag keine Creme auf Arme und Beine auftragen. Sagen Sie uns vorab, wenn Sie blutverdünnende Medikamente nehmen oder einen Herzschrittmacher haben.",
   },
   {

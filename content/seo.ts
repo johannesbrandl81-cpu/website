@@ -12,9 +12,9 @@ export const startseiteBeschreibung =
 
 export const seo = {
   untersuchungen: {
-    titel: "Untersuchungen: EEG, ENG, EMG",
+    titel: "Untersuchungen: EEG, ENG/NLG, EMG",
     beschreibung:
-      "EEG, ENG, EMG, evozierte Potenziale, Ultraschall der Halsgefäße und Gedächtnistestung beim Neurologen in Berlin-Tempelhof. Mit Hinweisen zur Vorbereitung.",
+      "EEG, ENG/NLG, EMG, evozierte Potenziale, Ultraschall der Halsgefäße und Gedächtnistestung beim Neurologen in Berlin-Tempelhof. Mit Hinweisen zur Vorbereitung.",
   },
   ketamintherapie: {
     titel: "Ketamintherapie in Berlin",

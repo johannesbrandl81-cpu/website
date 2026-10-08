@@ -119,6 +119,14 @@ export default function KostenSeite() {
                 </p>
               )}
               {l.posten.length > 0 && <Preistabelle titel={l.titel} posten={l.posten} />}
+              {l.herstellerLink && (
+                <p className="border-t border-hair-soft px-5 py-3.5 text-[15px] md:px-6">
+                  <a href={l.herstellerLink.href} target="_blank" rel="noopener" className="font-medium">
+                    {l.herstellerLink.label}
+                  </a>{" "}
+                  <span className="text-muted">(Herstellerseite, öffnet in neuem Tab)</span>
+                </p>
+              )}
             </Kasten>
           ))}
         </Container>
@@ -129,7 +137,7 @@ export default function KostenSeite() {
           <div className="flex flex-col gap-3 rounded border border-hair bg-sand p-6 md:p-8">
             <h2 className="text-xl font-semibold">Hinweise</h2>
             <p className="text-[17px] leading-relaxed text-ink-2">
-              Alle Beträge in Euro. <Platzhalter>Weitere Hinweise zur Abrechnung, z. B. Zahlungsarten</Platzhalter>
+              Alle Beträge in Euro. Bezahlung per Karte oder in bar.
             </p>
             <div className="mt-2 flex flex-col gap-3 sm:flex-row">
               <BuchenButton />
