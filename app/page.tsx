@@ -13,7 +13,6 @@ import {
   BuchenButton,
   Container,
   Eyebrow,
-  Freigabehinweis,
   Platzhalter,
   Punktliste,
   TelefonButton,
@@ -96,8 +95,7 @@ function Neurologie() {
         <h2 className="mt-3 font-serif text-3xl leading-tight font-normal md:text-[42px]">Neurologie</h2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-ink-2">{einleitungStartseite}</p>
 
-        <Freigabehinweis className="mt-8" />
-        <h3 className="eyebrow-muted mt-5">Behandlungsgebiete</h3>
+        <h3 className="eyebrow-muted mt-10">Behandlungsgebiete</h3>
         {/* Handy: wischbar wie die Selbstzahlerleistungen, ab Tablet Raster. */}
         <ul className="-mx-5 mt-4 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
           {behandlungsgebiete.map((k) => (

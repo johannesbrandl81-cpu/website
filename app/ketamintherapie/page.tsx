@@ -11,7 +11,6 @@ import {
   BuchenButton,
   Container,
   Eyebrow,
-  Freigabehinweis,
   KiEtikett,
   Platzhalter,
   Punktliste,
@@ -115,7 +114,6 @@ export default function KetamintherapieSeite() {
       {/* Was ist Ketamin */}
       <section className="border-t border-hair pt-14 md:pt-[88px]">
         <Container className="flex flex-col gap-4">
-          <Freigabehinweis />
           <h2 className="font-serif text-3xl leading-tight font-normal md:text-[34px]">Was ist Ketamin?</h2>
           <p className="max-w-3xl text-lg leading-relaxed text-ink-2">{ketamin.wasIst}</p>
         </Container>
@@ -231,7 +229,6 @@ export default function KetamintherapieSeite() {
               <p className="text-base leading-relaxed text-ink-2">{v.steuerung.text}</p>
             </Kasten>
             <Kasten titel="Wann keine Behandlung erfolgt">
-              <Freigabehinweis />
               <Punktliste punkte={ketamin.keineBehandlung} />
             </Kasten>
             <Kasten titel="Am Behandlungstag">

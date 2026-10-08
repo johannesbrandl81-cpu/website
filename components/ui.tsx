@@ -109,16 +109,6 @@ export function Punktliste({ punkte, className = "" }: { punkte: ReactNode[]; cl
     </ul>
   );
 }
-
-/** Markiert medizinische Texte, die Dr. Brandl noch fachlich freigeben muss. */
-export function Freigabehinweis({ className = "" }: { className?: string }) {
-  return (
-    <p className={`inline-flex self-start rounded-sm bg-placeholder-soft px-3 py-1 text-[12.5px] font-semibold text-[#6b5827] ${className}`}>
-      Textvorschlag zur fachlichen Freigabe
-    </p>
-  );
-}
-
 /**
  * Sichtbare Kennzeichnung KI-generierter Bilder (EU AI Act, Art. 50).
  * Wird absolut im Bild positioniert; das Elternelement braucht `relative`.
