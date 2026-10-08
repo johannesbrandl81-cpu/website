@@ -9,7 +9,7 @@ export const navigation: NavEintrag[] = [
     label: "Neurologie",
     kinder: [
       { href: "/#neurologie", label: "Behandlungsgebiete", hinweis: "Kopfschmerz, Schwindel, Nerven, Parkinson und mehr" },
-      { href: "/untersuchungen", label: "Untersuchungen und Vorbereitung", hinweis: "EEG, ENG, EMG, Ultraschall und mehr" },
+      { href: "/untersuchungen", label: "Untersuchungen und Vorbereitung", hinweis: "EEG, ENG/NLG, EMG, Ultraschall und mehr" },
       { href: "/studien", label: "Klinische Studien", hinweis: "In Zusammenarbeit mit FutureMeds" },
     ],
   },

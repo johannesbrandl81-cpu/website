@@ -54,10 +54,6 @@ function Hero() {
               <span className="size-1.5 rounded-full bg-leaf" aria-hidden="true" />
               {praxis.fachrichtung}
             </li>
-            <li className="flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-leaf" aria-hidden="true" />
-              Ehemaliger Oberarzt einer neurologischen Abteilung
-            </li>
           </ul>
           <div className="mt-1 flex flex-col gap-3 sm:flex-row">
             <BuchenButton className="min-h-[54px] px-7" />
@@ -196,6 +192,18 @@ function Leistungen() {
                     {l.weiterLink.label}
                     <PfeilIcon />
                   </Link>
+                )}
+                {l.herstellerLink && (
+                  <a
+                    href={l.herstellerLink.href}
+                    target="_blank"
+                    rel="noopener"
+                    className="relative z-10 inline-flex items-center gap-2 self-start text-[15px] font-medium"
+                  >
+                    {l.herstellerLink.label}
+                    <PfeilIcon />
+                    <span className="sr-only"> (öffnet in neuem Tab)</span>
+                  </a>
                 )}
                 <span
                   aria-hidden="true"

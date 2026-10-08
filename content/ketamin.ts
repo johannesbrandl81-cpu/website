@@ -1,8 +1,9 @@
 /**
  * Inhalte der Seite Ketamintherapie.
  *
- * Die Fachtexte sind Textvorschläge und müssen vor der Veröffentlichung von
- * Dr. Brandl fachlich freigegeben werden. `null` zeigt einen Platzhalter.
+ * Wirkung, Verträglichkeit, Ablauf und Anwendungsgebiete stammen von Dr. Brandl
+ * (Oktober 2026). Die übrigen Fachtexte sind Textvorschläge zur fachlichen
+ * Freigabe. `null` zeigt einen Platzhalter.
  */
 
 export const ketamin = {
@@ -12,23 +13,83 @@ export const ketamin = {
   wasIst:
     "Ketamin ist ein Arzneistoff, der seit vielen Jahrzehnten in der Anästhesie und Notfallmedizin eingesetzt wird. In deutlich niedrigerer Dosierung wird es als Infusion auch in der Behandlung psychischer Erkrankungen und bestimmter Schmerzerkrankungen angewendet.",
 
-  wieWirkt:
-    "Ketamin wirkt auf das Glutamat-System im Gehirn, indem es sogenannte NMDA-Rezeptoren hemmt. Damit setzt es an einer anderen Stelle an als die meisten Antidepressiva. Eine Wirkung kann bereits wenige Stunden bis Tage nach der Infusion eintreten. Wie lange sie anhält, ist individuell verschieden.",
+  /** Text von Dr. Brandl (Oktober 2026), wörtlich übernommen. */
+  wirkung: {
+    titel: "Wie wirkt die Ketamintherapie?",
+    einleitung:
+      "Die Ketamintherapie kombiniert biologische und psychotherapeutische Effekte, um Betroffenen einen schnellen Weg aus der Krise zu ermöglichen. Dabei wird die doppelte Wirkung der Substanz genutzt: den unmittelbar bewusstseinsverändernden (dissoziativen) Effekt während der Infusion und die darauf folgende, anhaltende antidepressive sowie angstlösende Wirkung.",
+    biologisch: {
+      titel: "Die biologische Wirkung: Schnelle Hilfe im Gehirn",
+      punkte: [
+        {
+          stichwort: "Sofortige Entlastung",
+          text: "Akute Krisen und Suizidgedanken können oft schon nach der ersten Infusion spürbar nachlassen.",
+        },
+        {
+          stichwort: "Die temporäre „Abspaltung“ (Dissoziation)",
+          text: "Ketamin blockiert gezielt bestimmte Andockstellen im Gehirn, die sogenannten NMDA-Rezeptoren. Dies führt zu einer vorübergehenden Entkopplung zwischen dem Großhirn (für rationales Denken) und dem limbischen System (für Emotionen). Reize von außen werden gedämpft, während das Gehirn intensiv nach innen blickt.",
+        },
+        {
+          stichwort: "Förderung der Neuroplastizität durch Glutamat",
+          text: "Nach dieser kurzen Trennung kommt es zu einem biologischen „Reset“. Ketamin sorgt für eine gezielte Ausschüttung des wichtigen Botenstoffs Glutamat. Dies stößt die Produktion von körpereigenen Wachstumsfaktoren an, die wie Dünger für die Nervenzellen wirken: Es entstehen neue Verbindungen (Synapsen). Diese Regeneration bricht verkrustete Denkmuster auf und macht Patienten wieder lernbereit – bei schweren Depressionen wird eine erfolgreiche Psychotherapie dadurch oft überhaupt erst möglich.",
+        },
+        {
+          stichwort: "Kurze Verweildauer, nachhaltiger Effekt",
+          text: "Der Körper baut den Wirkstoff bereits nach wenigen Stunden vollständig ab, während die positiven strukturellen Veränderungen im Gehirn anhalten. Dauerhafte Nebenwirkungen sind bei dieser kontrollierten Anwendung praktisch nicht bekannt.",
+        },
+      ],
+    },
+    psychotherapeutisch: {
+      titel: "Der psychotherapeutische Nutzen: Ein Fenster zur Heilung",
+      punkte: [
+        {
+          stichwort: "Während der Infusion",
+          text: "Durch die schmerzfreie Distanz der Dissoziation können verdrängte Emotionen, Erinnerungen oder innere Konflikte an die Oberfläche treten – jedoch ohne die sonst übliche Panik oder Angst. Im geschützten Rahmen einer Praxis können diese wertvollen Erkenntnisse anschließend psychotherapeutisch verarbeitet werden.",
+        },
+        {
+          stichwort: "Nach der Infusion",
+          text: "Der eigentliche antidepressive Effekt entfaltet sich meist am Folgetag. Das frisch „neu verschaltete“ Gehirn zeigt sich in einer deutlich verbesserten und stabilisierten Stimmung.",
+        },
+      ],
+    },
+    infusion: {
+      titel: "Warum die intravenöse Infusion die sicherste Methode ist",
+      einleitung:
+        "Im Gegensatz zu unkontrollierten Anwendungen oder dem auf dem Markt erhältlichen Ketamin-Nasenspray (Esketamin) bietet die intravenöse Infusion entscheidende Vorteile für Ihre Sicherheit und den Therapieerfolg:",
+      punkte: [
+        {
+          stichwort: "Präzise Dosierung und Steuerbarkeit",
+          text: "Während die Aufnahme beim Nasenspray durch Faktoren wie Schnupfen oder Schleimhautbeschaffenheit schwanken kann, gelangt der Wirkstoff bei der Infusion zu 100 % gleichmäßig in die Blutbahn. Die Intensität der Dissoziation lässt sich dadurch punktgenau und individuell steuern.",
+        },
+        {
+          stichwort: "Maximale Sicherheit bei unangenehmen Effekten",
+          text: "Sollten während der Reise unerwartet zu intensive oder unangenehme Emotionen auftreten, kann die Infusion jederzeit sofort gestoppt werden. Da Ketamin im Blut extrem schnell abgebaut wird, lässt die Wirkung nach dem Stopp innerhalb von nur einer Minute nach und ist komplett verschwunden. Sie behalten also zu jedem Zeitpunkt die volle Kontrolle über den Prozess.",
+        },
+      ],
+    },
+  },
 
   fuerWen:
     "Ob eine Ketamintherapie für Sie geeignet ist, klären wir in einem ärztlichen Vorgespräch. Dabei besprechen wir Ihre Beschwerden, Ihre Vorgeschichte und mögliche Gegenanzeigen.",
 
-  /** Weitere Anwendungsgebiete legt Dr. Brandl fest. */
-  anwendungsgebiete: ["Depression"] as string[],
+  /** Von Dr. Brandl festgelegt (Oktober 2026). */
+  anwendungsgebiete: [
+    "Depression",
+    "Posttraumatische Belastungsstörungen (PTBS)",
+    "Zwangsstörungen (OCD)",
+    "Angststörungen",
+    "Chronische Schmerzen",
+    "Suchterkrankungen",
+    "Long-Covid",
+    "Fatigue-Syndrome und ME/CFS",
+  ],
 
   ablauf: {
-    anzahlInfusionen: null as string | null,
-    zeitraum: null as string | null,
-    dauerVorgespraech: null as string | null,
-    dauerInfusion: null as string | null,
-    ueberwachung: null as string | null,
-    dauerNachbeobachtung: null as string | null,
-    begleitgespraeche: null as string | null,
+    einleitung: "Eine Behandlung umfasst in der Regel mehrere Infusionen. Dies wird individuell abgestimmt.",
+    nachhaltigkeit:
+      "Da die Wirkung von Ketamin individuell variiert und oft Tage, Wochen oder gar Monate anhält, wird gemeinsam geklärt, wie viele Infusionen und in welchem Abstand Sinn ergeben.",
+    dauerInfusion: "ca. 40 Minuten",
+    dauerNachbeobachtung: "ca. 30 Minuten",
   },
 
   psychotherapeutin: {
@@ -53,14 +114,22 @@ export const ketamin = {
     "Abhängigkeitserkrankungen (Prüfung im Einzelfall)",
   ],
 
-  nebenwirkungen: [
-    "Veränderte Wahrnehmung von Körper und Zeit",
-    "Schwindel",
-    "Anstieg von Blutdruck und Puls",
-    "Übelkeit",
-    "Kopfschmerzen und Müdigkeit",
-  ],
-  nebenwirkungenHinweis: "Diese Wirkungen lassen in der Regel kurze Zeit nach der Infusion nach.",
+  /** Text von Dr. Brandl (Oktober 2026), wörtlich übernommen. */
+  vertraeglichkeit: {
+    titel: "Verträglichkeit, Nebenwirkungen und Risiken",
+    einleitung: [
+      "Die ketamingestützte Psychotherapie ist eine hochmoderne und wissenschaftlich fundierte Behandlungsmethode, die eine qualitativ hochwertige, individuell angepasste Therapie ermöglicht und Betroffenen neue Hoffnung auf Heilung und Besserung geben kann.",
+      "Ketamininfusionen sind in der Regel sehr gut verträglich. Dennoch gilt es, folgende Punkte zu beachten:",
+    ],
+    begleiterscheinungen: {
+      titel: "Mögliche Begleiterscheinungen",
+      text: "Zu den vorübergehenden Nebenwirkungen können ein kurzzeitiger Blutdruckanstieg, Übelkeit, Erbrechen, Schwindel oder Kopfschmerzen gehören. Diese Symptome klingen in der Regel unmittelbar nach dem Ende der Infusion von selbst wieder ab.",
+    },
+    steuerung: {
+      titel: "Sicherheit durch Infusionssteuerung",
+      text: "Sollten während der Behandlung unerwünschte Phänomene auftreten, wird die Infusionsgeschwindigkeit sofort angepasst oder die Gabe ganz angehalten. Innerhalb weniger Minuten verschwinden die Beschwerden vollständig. Dies unterstreicht den großen Vorteil von Infusionen, deren Tropfgeschwindigkeit sich zu jeder Sekunde perfekt an das Befinden des Patienten anpassen lässt.",
+    },
+  },
 
   behandlungstag: [
     "Kein Auto, Motorrad oder Fahrrad fahren",

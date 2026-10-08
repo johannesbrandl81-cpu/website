@@ -46,7 +46,7 @@ export const praxis: Praxis = {
   stadtteil: "Tempelhof",
   domain: "https://neurologie-praxistempelhof.de",
   doctolib: "https://www.doctolib.de/neurologie/berlin/johannes-brandl",
-  telefon: null,
+  telefon: "030 7522756",
   email: null,
   sprechzeiten: [
     { tag: "Montag", zeit: "9 bis 12 Uhr und 15 bis 18 Uhr" },

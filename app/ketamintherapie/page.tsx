@@ -28,50 +28,36 @@ function Wert({ wert, platzhalter }: { wert: string | null; platzhalter: string 
   return wert ? <>{wert}</> : <Platzhalter>{platzhalter}</Platzhalter>;
 }
 
-const ketaminPreis = leistungen.find((l) => l.id === "ketamintherapie")?.posten[0]?.preis ?? null;
+const ketaminPosten = leistungen.find((l) => l.id === "ketamintherapie")?.posten ?? [];
 
 export default function KetamintherapieSeite() {
   const a = ketamin.ablauf;
+  const w = ketamin.wirkung;
+  const v = ketamin.vertraeglichkeit;
   const pt = ketamin.psychotherapeutin;
 
   const schritte: { nr: string; titel: string; text: ReactNode }[] = [
     {
       nr: "01",
       titel: "Vorgespräch",
-      text: (
-        <>
-          Anamnese, Durchsicht Ihrer Befunde, Klärung der Eignung und ausführliche Aufklärung. Dauer:{" "}
-          <Wert wert={a.dauerVorgespraech} platzhalter="Dauer" />.
-        </>
-      ),
+      text: "Anamnese, Durchsicht Ihrer Befunde, Klärung der Eignung und ausführliche Aufklärung.",
     },
     {
       nr: "02",
       titel: "Infusion",
-      text: (
-        <>
-          Sie erhalten Ketamin als Infusion über <Wert wert={a.dauerInfusion} platzhalter="Dauer" />. Währenddessen
-          werden <Wert wert={a.ueberwachung} platzhalter="Überwachungswerte" /> kontrolliert.
-        </>
-      ),
+      text: `Sie erhalten Ketamin als Infusion über ${a.dauerInfusion}. Währenddessen werden Ihre Vitalwerte kontrolliert.`,
     },
     {
       nr: "03",
       titel: "Nachbeobachtung",
-      text: (
-        <>
-          Nach der Infusion bleiben Sie noch <Wert wert={a.dauerNachbeobachtung} platzhalter="Dauer" /> zur
-          Beobachtung in der Praxis.
-        </>
-      ),
+      text: `Nach der Infusion bleiben Sie noch ${a.dauerNachbeobachtung} in der Praxis.`,
     },
     {
       nr: "04",
       titel: "Begleitung",
       text: (
         <>
-          Begleitend finden Gespräche mit <Wert wert={pt.name} platzhalter="Name der Psychotherapeutin" /> statt.{" "}
-          <Wert wert={a.begleitgespraeche} platzhalter="Anzahl und Zeitpunkt der Gespräche" />
+          Begleitend finden Gespräche mit <Wert wert={pt.name} platzhalter="Name der Psychotherapeutin" /> statt.
         </>
       ),
     },
@@ -126,19 +112,33 @@ export default function KetamintherapieSeite() {
         </Container>
       </section>
 
-      {/* Was ist Ketamin, wie wirkt es */}
-      <section className="border-t border-hair py-14 md:py-[88px]">
-        <Container className="flex flex-col gap-7">
+      {/* Was ist Ketamin */}
+      <section className="border-t border-hair pt-14 md:pt-[88px]">
+        <Container className="flex flex-col gap-4">
           <Freigabehinweis />
-          <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-            <div className="flex flex-col gap-4">
-              <h2 className="font-serif text-3xl leading-tight font-normal md:text-[34px]">Was ist Ketamin?</h2>
-              <p className="text-lg leading-relaxed text-ink-2">{ketamin.wasIst}</p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="font-serif text-3xl leading-tight font-normal md:text-[34px]">Wie wirkt Ketamin?</h2>
-              <p className="text-lg leading-relaxed text-ink-2">{ketamin.wieWirkt}</p>
-            </div>
+          <h2 className="font-serif text-3xl leading-tight font-normal md:text-[34px]">Was ist Ketamin?</h2>
+          <p className="max-w-3xl text-lg leading-relaxed text-ink-2">{ketamin.wasIst}</p>
+        </Container>
+      </section>
+
+      {/* Wie wirkt die Ketamintherapie (Text von Dr. Brandl) */}
+      <section className="py-14 md:py-[88px]">
+        <Container className="flex flex-col gap-8">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <h2 className="font-serif text-3xl leading-tight font-normal md:text-[42px]">{w.titel}</h2>
+            <p className="text-lg leading-relaxed text-ink-2">{w.einleitung}</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 md:gap-6">
+            {[w.biologisch, w.psychotherapeutisch].map((block) => (
+              <Kasten key={block.titel} titel={block.titel}>
+                <Stichpunkte punkte={block.punkte} />
+              </Kasten>
+            ))}
+          </div>
+          <div className="flex flex-col gap-3.5 rounded border border-[#c9d8d5] bg-accent-soft p-6 md:p-[30px]">
+            <h3 className="font-serif text-2xl leading-tight font-normal md:text-[28px]">{w.infusion.titel}</h3>
+            <p className="text-[17px] leading-relaxed text-ink-2">{w.infusion.einleitung}</p>
+            <Stichpunkte punkte={w.infusion.punkte} />
           </div>
         </Container>
       </section>
@@ -160,9 +160,6 @@ export default function KetamintherapieSeite() {
                   {g}
                 </li>
               ))}
-              <li className="flex min-h-[58px] items-center rounded border border-hair bg-surface px-5 text-[17px]">
-                <Platzhalter>Weitere Anwendungsgebiete</Platzhalter>
-              </li>
             </ul>
           </div>
         </Container>
@@ -172,9 +169,8 @@ export default function KetamintherapieSeite() {
       <section className="py-14 md:py-24">
         <Container>
           <h2 className="font-serif text-3xl leading-tight font-normal md:text-[42px]">Ablauf der Behandlung</h2>
-          <p className="mt-4 text-lg leading-relaxed text-ink-2">
-            Eine Behandlung umfasst in der Regel <Wert wert={a.anzahlInfusionen} platzhalter="Anzahl" /> Infusionen
-            über <Wert wert={a.zeitraum} platzhalter="Zeitraum" />.
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-ink-2">
+            {a.einleitung} {a.nachhaltigkeit}
           </p>
           <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {schritte.map((s) => (
@@ -218,18 +214,25 @@ export default function KetamintherapieSeite() {
         </Container>
       </section>
 
-      {/* Sicherheit */}
+      {/* Verträglichkeit (Einleitung und zwei Kästen: Text von Dr. Brandl) */}
       <section className="py-14 md:py-24">
         <Container className="flex flex-col gap-4">
-          <Freigabehinweis />
-          <h2 className="font-serif text-3xl leading-tight font-normal md:text-[42px]">Sicherheit</h2>
-          <div className="mt-6 grid gap-5 md:grid-cols-3 md:gap-6">
-            <Kasten titel="Wann keine Behandlung erfolgt">
-              <Punktliste punkte={ketamin.keineBehandlung} />
+          <h2 className="font-serif text-3xl leading-tight font-normal md:text-[42px]">{v.titel}</h2>
+          {v.einleitung.map((absatz) => (
+            <p key={absatz} className="max-w-3xl text-lg leading-relaxed text-ink-2">
+              {absatz}
+            </p>
+          ))}
+          <div className="mt-6 grid gap-5 md:grid-cols-2 md:gap-6">
+            <Kasten titel={v.begleiterscheinungen.titel}>
+              <p className="text-base leading-relaxed text-ink-2">{v.begleiterscheinungen.text}</p>
             </Kasten>
-            <Kasten titel="Mögliche Nebenwirkungen">
-              <Punktliste punkte={ketamin.nebenwirkungen} />
-              <p className="mt-1 text-base leading-relaxed text-ink-2">{ketamin.nebenwirkungenHinweis}</p>
+            <Kasten titel={v.steuerung.titel}>
+              <p className="text-base leading-relaxed text-ink-2">{v.steuerung.text}</p>
+            </Kasten>
+            <Kasten titel="Wann keine Behandlung erfolgt">
+              <Freigabehinweis />
+              <Punktliste punkte={ketamin.keineBehandlung} />
             </Kasten>
             <Kasten titel="Am Behandlungstag">
               <Punktliste
@@ -253,12 +256,14 @@ export default function KetamintherapieSeite() {
           <div className="flex flex-col gap-3 rounded border border-hair bg-surface p-6 md:p-8">
             <h2 className="text-[19px] font-semibold">Kosten</h2>
             <p className="text-base text-ink-2">Die Ketamintherapie ist eine Selbstzahlerleistung.</p>
-            <p className="flex justify-between border-y border-hair-soft py-2.5 text-base">
-              <span className="text-ink-2">Infusion</span>
-              <span className="font-medium">
-                {ketaminPreis ?? <Platzhalter>Betrag</Platzhalter>}
-              </span>
-            </p>
+            <dl className="border-y border-hair-soft">
+              {ketaminPosten.map((p) => (
+                <div key={p.name} className="flex justify-between gap-4 py-2.5 text-base [&+&]:border-t [&+&]:border-hair-soft">
+                  <dt className="text-ink-2">{p.name}</dt>
+                  <dd className="font-medium whitespace-nowrap">{p.preis ?? <Platzhalter>Betrag</Platzhalter>}</dd>
+                </div>
+              ))}
+            </dl>
             <Link href="/kosten" className="text-[15px] font-medium">
               Alle Preise ansehen
             </Link>
@@ -354,6 +359,22 @@ function Person({
         </ul>
       </div>
     </article>
+  );
+}
+
+/** Aufzählung mit fettem Stichwort am Anfang jedes Punkts. */
+function Stichpunkte({ punkte }: { punkte: { stichwort: string; text: string }[] }) {
+  return (
+    <ul className="flex flex-col gap-3.5">
+      {punkte.map((p) => (
+        <li key={p.stichwort} className="flex items-start gap-2.5 text-base leading-relaxed text-ink-2">
+          <span className="mt-[0.7em] size-[5px] shrink-0 rounded-full bg-leaf" aria-hidden="true" />
+          <span>
+            <strong className="font-semibold text-ink">{p.stichwort}:</strong> {p.text}
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
