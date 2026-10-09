@@ -73,7 +73,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [ ] Ketamintherapie: Hinweise zu Essen und Trinken vor der Infusion (`app/ketamintherapie/page.tsx`)
 - [x] Psychotherapeutin: Name (Stella Savelsberg), Berufsbezeichnung, Link zu ihrer Website (`content/ketamin.ts`)
 - [x] Psychotherapeutin: Kurzvorstellung (`content/ketamin.ts`, Feld `text`)
-- [ ] **Foto Stella Savelsberg:** Eingebaut ist ein zugeschnittenes Vorschaubild des Fotografen (Original trägt das Wasserzeichen "NUR ZUR AUSWAHL"). Vor dem Livegang durch die lizenzierte Datei ersetzen und das Nutzungsrecht für die Website klären (`public/bilder/savelsberg.jpg`)
+- [x] **Foto Stella Savelsberg:** neues Porträt ohne Wasserzeichen eingebaut (`public/bilder/savelsberg.jpg`). Nutzungsrecht für die Website bitte bestätigen lassen
 - [x] Hinweise "Textvorschlag zur fachlichen Freigabe" entfernt (Oktober 2026). Die Fachtexte gelten damit als von Dr. Brandl freigegeben; Änderungen kommen in der letzten Korrekturschleife
 - [ ] Ketamin-Texte und Preisliste (u. a. Markenname "Medivitan") rechtlich nach Heilmittelwerbegesetz prüfen lassen
 - [x] Hinweis zu Zahlungsarten auf der Kostenseite (`app/kosten/page.tsx`)
