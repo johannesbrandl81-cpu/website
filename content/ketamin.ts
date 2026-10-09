@@ -97,7 +97,7 @@ export const ketamin = {
     beruf: "Psychologische Psychotherapeutin" as string | null,
     /** Kurzvorstellung, von Frau Savelsberg geliefert. */
     text: "Vorbereitung im Gespräch, Begleitung rund um die ärztliche Behandlung und Integration, damit das Erlebte in Ihre laufende Psychotherapie einfließen kann." as string | null,
-    /** Vorschaubild des Fotografen, zugeschnitten. Vor dem Livegang durch die lizenzierte Datei ersetzen. */
+    /** Porträt Stella Savelsberg (Oktober 2026), quadratisch zugeschnitten. */
     foto: { src: "/bilder/savelsberg.jpg", width: 700, height: 700 },
     website: "https://www.psychotherapie-stella-savelsberg.de/ketamin-gestuetzte-psychotherapie",
   },
