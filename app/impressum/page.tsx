@@ -14,7 +14,6 @@ export default function ImpressumSeite() {
   return (
     <Rechtstext
       titel="Impressum"
-      hinweis="Entwurf: Angaben in eckigen Klammern fehlen noch. Vor der Veröffentlichung vollständig ausfüllen und rechtlich prüfen lassen."
     >
       <div>
         <h2>Angaben gemäß § 5 DDG</h2>

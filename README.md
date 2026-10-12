@@ -88,9 +88,10 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [x] Logo Arbeitskreis Botulinumtoxin (`public/logos/ak-botulinumtoxin.svg`)
 - [ ] Größere Datei des BGPN-Logos (die vorhandene ist nur 98 × 115 Pixel)
 - [ ] Zustimmung der Vereine zur Nutzung ihrer Logos
-- [ ] Impressum: E-Mail-Adresse fehlt noch, danach prüfen lassen. Berufsbezeichnung, Ärztekammer, KV und berufsrechtliche Regelungen sind eingetragen
-- [ ] Datenschutzerklärung vervollständigen (Hosting, Speicherdauer, Auftragsverarbeitung) und prüfen lassen, inklusive Abschnitt zur Google-Maps-Karte
-- [ ] Danach die Entwurfshinweise auf Impressum und Datenschutz entfernen (`hinweis` in `app/impressum/page.tsx` und `app/datenschutz/page.tsx`)
+- [x] Impressum vollständig (Oktober 2026)
+- [x] Datenschutzerklärung vervollständigt (Hosting bei Vercel, Auftragsverarbeitung, Drittlandübermittlung, Speicherdauer)
+- [x] Entwurfshinweise auf Impressum und Datenschutz entfernt
+- [ ] Impressum und Datenschutzerklärung rechtlich prüfen lassen; im Vercel-Konto den Auftragsverarbeitungsvertrag (DPA) prüfen bzw. akzeptieren
 
 ## Technik
 

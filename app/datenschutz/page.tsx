@@ -14,7 +14,6 @@ export default function DatenschutzSeite() {
   return (
     <Rechtstext
       titel="Datenschutzerklärung"
-      hinweis="Entwurf: Dieser Text ist ein Ausgangspunkt und keine Rechtsberatung. Vor der Veröffentlichung vollständig ausfüllen und von einer fachkundigen Stelle prüfen lassen."
     >
       <div>
         <h2>1. Verantwortlicher</h2>
@@ -44,17 +43,18 @@ export default function DatenschutzSeite() {
       <div>
         <h2>2. Aufruf der Website und Hosting</h2>
         <p>
-          Diese Website wird bei <Platzhalter>Hosting-Anbieter mit Anschrift, geplant: Vercel Inc.</Platzhalter>{" "}
-          betrieben. Beim Aufruf der Seiten verarbeitet der Anbieter technisch notwendige Daten wie IP-Adresse, Datum
+          Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, betrieben. Beim Aufruf der Seiten verarbeitet der Anbieter technisch notwendige Daten wie IP-Adresse, Datum
           und Uhrzeit des Zugriffs, aufgerufene Seite und Browserinformationen, um die Website auszuliefern und ihre
           Sicherheit zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse
           liegt im sicheren und stabilen Betrieb der Website.
         </p>
         <p>
-          <Platzhalter>
-            Angaben zur Speicherdauer der Server-Logdaten, zum Auftragsverarbeitungsvertrag und zur Rechtsgrundlage
-            einer möglichen Übermittlung in Drittländer
-          </Platzhalter>
+          Mit Vercel besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO. Da Vercel seinen Sitz in den USA
+          hat, kann es zu einer Übermittlung von Daten in die USA kommen. Diese stützt sich auf den
+          Angemessenheitsbeschluss der EU-Kommission zum EU-US Data Privacy Framework (Art. 45 DSGVO), unter dem Vercel
+          zertifiziert ist, sowie ergänzend auf Standardvertragsklauseln (Art. 46 DSGVO). Die Server-Logdaten werden nur
+          so lange gespeichert, wie es für den Betrieb und die Sicherheit der Website erforderlich ist, und danach
+          gelöscht.
         </p>
       </div>
 
