@@ -235,7 +235,7 @@ export default function KetamintherapieSeite() {
               <Punktliste
                 punkte={[
                   ...ketamin.behandlungstag,
-                  <Platzhalter key="essen">Hinweise zu Essen und Trinken vor der Infusion</Platzhalter>,
+                  ...ketamin.essenTrinken,
                 ]}
               />
             </Kasten>

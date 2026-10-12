@@ -63,21 +63,21 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 ### Noch offen vor dem Livegang
 
 - [x] Telefonnummer (`content/praxis.ts`)
-- [ ] E-Mail-Adresse (`content/praxis.ts`)
+- [x] E-Mail-Adresse (`content/praxis.ts`)
 - [x] Sprechzeiten je Wochentag (`content/praxis.ts`)
 - [x] Anbindung mit öffentlichen Verkehrsmitteln (`content/praxis.ts`)
 - [x] Preise als Selbstzahler ohne Kassentermin (`selbstzahlerKasse` in `content/leistungen.ts`)
 - [x] Preise der Selbstzahlerleistungen (IGeL) (`content/leistungen.ts`)
 - [x] Ketamintherapie: Ablauf, Dauer, Überwachung, Nachbeobachtung (`content/ketamin.ts`)
 - [x] Ketamintherapie: Anwendungsgebiete (`content/ketamin.ts`)
-- [ ] Ketamintherapie: Hinweise zu Essen und Trinken vor der Infusion (`app/ketamintherapie/page.tsx`)
+- [x] Ketamintherapie: Hinweise zu Essen und Trinken vor der Infusion (`content/ketamin.ts`)
 - [x] Psychotherapeutin: Name (Stella Savelsberg), Berufsbezeichnung, Link zu ihrer Website (`content/ketamin.ts`)
 - [x] Psychotherapeutin: Kurzvorstellung (`content/ketamin.ts`, Feld `text`)
 - [x] **Foto Stella Savelsberg:** neues Porträt ohne Wasserzeichen eingebaut (`public/bilder/savelsberg.jpg`). Nutzungsrecht für die Website bitte bestätigen lassen
 - [x] Hinweise "Textvorschlag zur fachlichen Freigabe" entfernt (Oktober 2026). Die Fachtexte gelten damit als von Dr. Brandl freigegeben; Änderungen kommen in der letzten Korrekturschleife
 - [ ] Ketamin-Texte und Preisliste (u. a. Markenname "Medivitan") rechtlich nach Heilmittelwerbegesetz prüfen lassen
 - [x] Hinweis zu Zahlungsarten auf der Kostenseite (`app/kosten/page.tsx`)
-- [x] Porträt Dr. Brandl (`public/bilder/brandl.jpg`). Die Datei ist nur 600 Pixel breit; eine höher aufgelöste Version wäre besser
+- [x] Porträt Dr. Brandl (`public/bilder/brandl.jpg`), neues Foto 480 × 480 Pixel. Eine höher aufgelöste Version wäre auf großen Bildschirmen schärfer
 - [ ] Ketamin-Seite: KI-Bild vom Behandlungsraum (`public/bilder/ketamin-behandlungsraum.jpg`) möglichst durch ein echtes Foto ersetzen. Auf dem KI-Bild stehen auf Infusionsbeutel und Pumpe teils unsinnige Fantasietexte (zum Beispiel "zor i.v.-Anwendung", "8.5 mgikgh")
 - [ ] Nerven- und Muskelsonografie: anbieten? Dann in `content/neurologie.ts` ergänzen
 - [ ] Studien: alle Angaben vor dem Livegang mit futuremeds.de abgleichen (`content/studien.ts`, `studienStand`)
@@ -85,7 +85,7 @@ Solange keine Telefonnummer eingetragen ist, zeigt die mobile Buchungsleiste nur
 - [ ] Logo als Originaldatei (SVG oder PNG ab 1000 px). `public/logo-kopf.png`, `app/icon.png` und `app/apple-icon.png` sind aus einem kleinen Bild freigestellt. Danach die Petrol-Version für den Header mit `scripts/logo-einfaerben.mjs` neu erzeugen
 - [ ] Farbvariante entscheiden: Vorschau mit `?farbe=braun`, zurück mit `?farbe=petrol`. Danach Skript in `app/layout.tsx` und Block `html[data-farbe="braun"]` in `app/globals.css` entfernen oder die Werte als Standard übernehmen
 - [x] Studien: Bild für Narkolepsie ergänzen (mit `scripts/ki-bild.mjs` aufbereiten, in `content/studien.ts` als `bild` eintragen)
-- [ ] Logo Arbeitskreis Botulinumtoxin (in `public/logos/` ablegen und in `content/ueber-mich.ts` eintragen)
+- [x] Logo Arbeitskreis Botulinumtoxin (`public/logos/ak-botulinumtoxin.svg`)
 - [ ] Größere Datei des BGPN-Logos (die vorhandene ist nur 98 × 115 Pixel)
 - [ ] Zustimmung der Vereine zur Nutzung ihrer Logos
 - [ ] Impressum: E-Mail-Adresse fehlt noch, danach prüfen lassen. Berufsbezeichnung, Ärztekammer, KV und berufsrechtliche Regelungen sind eingetragen
