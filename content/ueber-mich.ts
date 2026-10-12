@@ -43,7 +43,11 @@ export const mitgliedschaften: Mitgliedschaft[] = [
     art: "fachlich",
     logo: { src: "/logos/ak-parkinson.png", width: 160, height: 386 },
   },
-  { name: "Arbeitskreis Botulinumtoxin", art: "fachlich" },
+  {
+    name: "Arbeitskreis Botulinumtoxin",
+    art: "fachlich",
+    logo: { src: "/logos/ak-botulinumtoxin.svg", width: 980, height: 403 },
+  },
   {
     name: "Deutsche Gesellschaft für Musikphysiologie und Musikermedizin",
     art: "fachlich",

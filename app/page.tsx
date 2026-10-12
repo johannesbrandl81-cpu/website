@@ -133,7 +133,11 @@ function Neurologie() {
           <div className="flex flex-col gap-3 self-start rounded border border-hair bg-sand p-6 md:p-7">
             <h3 className="font-serif text-[22px] leading-tight font-normal">Kein Termin in der Kassensprechstunde frei?</h3>
             <p className="text-base leading-relaxed text-ink-2">
-              Dann ist eine neurologische Untersuchung auch als Selbstzahler möglich, abgerechnet nach GOÄ.
+              Dann ist eine neurologische Untersuchung auch als Selbstzahler möglich, buchbar unter{" "}
+              <a href={praxis.doctolib} target="_blank" rel="noopener">
+                Doctolib
+              </a>
+              . Wählen Sie hierzu bitte „Privat versichert“ aus. Abgerechnet wird nach GOÄ.
             </p>
             <Link href="/kosten#selbstzahler" className="inline-flex items-center gap-2 self-start text-base font-medium">
               Preise ansehen
@@ -226,7 +230,7 @@ function UeberMich() {
   return (
     <section id="ueber-mich" className="py-14 md:py-[104px]">
       <Container className="grid gap-10 lg:grid-cols-[480px_minmax(0,1fr)] lg:gap-[72px]">
-        <div className="relative aspect-[600/538] w-full self-start overflow-hidden rounded border border-hair bg-sand-2">
+        <div className="relative aspect-square w-full self-start overflow-hidden rounded border border-hair bg-sand-2">
           <Image
             src={praxis.foto.src}
             alt={`${praxis.arzt}, ${praxis.fachrichtung}`}

@@ -131,6 +131,12 @@ export const ketamin = {
     },
   },
 
+  /** Von Dr. Brandl (Oktober 2026). */
+  essenTrinken: [
+    "Essen: Mindestens 2 bis 4 Stunden vor der Infusion sollte keine feste Nahrung mehr aufgenommen werden.",
+    "Trinken: Bis zu 2 Stunden vor dem Termin ist das Trinken von klaren Flüssigkeiten in kleineren Mengen erlaubt. Danach sollte idealerweise gar nichts mehr getrunken werden.",
+  ],
+
   behandlungstag: [
     "Kein Auto, Motorrad oder Fahrrad fahren",
     "Keine Maschinen bedienen",

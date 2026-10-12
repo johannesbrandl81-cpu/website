@@ -22,6 +22,7 @@ export function Logoleiste() {
                       alt=""
                       width={m.logo.width}
                       height={m.logo.height}
+                      unoptimized={m.logo.src.endsWith(".svg")}
                       className={
                         m.logo.breit
                           ? "h-auto w-[200px] max-w-full md:w-[230px]"

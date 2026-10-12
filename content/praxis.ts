@@ -47,7 +47,7 @@ export const praxis: Praxis = {
   domain: "https://neurologie-praxistempelhof.de",
   doctolib: "https://www.doctolib.de/neurologie/berlin/johannes-brandl",
   telefon: "030 7522756",
-  email: null,
+  email: "info@praxistempelhof.de",
   sprechzeiten: [
     { tag: "Montag", zeit: "9 bis 12 Uhr und 15 bis 18 Uhr" },
     { tag: "Dienstag", zeit: "9 bis 12 Uhr und 15 bis 18 Uhr" },
@@ -55,7 +55,7 @@ export const praxis: Praxis = {
     { tag: "Donnerstag", zeit: "9 bis 12 Uhr und 15 bis 18 Uhr" },
     { tag: "Freitag", zeit: "9 bis 12 Uhr" },
   ],
-  foto: { src: "/bilder/brandl.jpg", width: 600, height: 538 },
+  foto: { src: "/bilder/brandl.jpg", width: 480, height: 480 },
   oepnv: "U6, Haltestelle Kaiserin-Augusta-Straße",
   barrierefreiheit: ["Erdgeschoss, 2 Treppenstufen", "Kostenlose Parkplätze in der Nähe"],
   abrechnung: "Gesetzlich und privat Versicherte sowie Selbstzahlende",
