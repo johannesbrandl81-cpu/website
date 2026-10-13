@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { IBM_Plex_Sans, Newsreader } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobilBuchungsleiste } from "@/components/MobilBuchungsleiste";
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main id="inhalt">{children}</main>
         <Footer />
         <MobilBuchungsleiste />
+        <Analytics />
       </body>
     </html>
   );

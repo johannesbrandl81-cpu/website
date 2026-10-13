@@ -59,11 +59,22 @@ export default function DatenschutzSeite() {
       </div>
 
       <div>
-        <h2>3. Keine Cookies, kein Tracking</h2>
+        <h2>3. Besucherstatistik ohne Cookies</h2>
         <p>
-          Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken und verwendet keine Tracking-Dienste. Die
-          Schriftarten werden von unserem eigenen Server ausgeliefert. Es besteht dabei keine Verbindung zu Servern von
-          Google.
+          Um zu verstehen, welche Seiten gelesen werden, nutzen wir Vercel Web Analytics (Anbieter wie unter Punkt 2).
+          Dabei werden aufgerufene Seite, verweisende Website, Gerätetyp, Browser, Betriebssystem und Land erfasst. Es
+          werden keine Cookies gesetzt und keine Daten im Browser gespeichert. Besucher werden nur über einen
+          Hashwert aus der Anfrage wiedererkannt, der nach 24 Stunden verworfen wird, sodass kein Profil über mehrere
+          Tage oder Websites entsteht. Wir sehen ausschließlich zusammengefasste Zahlen, keine einzelnen Personen.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt darin, das Angebot der
+          Website zu verbessern. Für die Datenübermittlung in die USA gelten die Angaben unter Punkt 2. Sie können
+          jederzeit widersprechen (Art. 21 DSGVO), zum Beispiel per E-Mail an uns.
+        </p>
+        <p>
+          Darüber hinaus setzt diese Website keine Cookies zu Analyse- oder Werbezwecken. Die Schriftarten werden von
+          unserem eigenen Server ausgeliefert. Es besteht dabei keine Verbindung zu Servern von Google.
         </p>
       </div>
 
